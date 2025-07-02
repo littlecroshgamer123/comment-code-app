@@ -69,16 +69,3 @@ export default function CommentPostApp() {
   );
 }
 
-/*
-WHERE TO HOST THIS APPLICATION:
-1. **Vercel** (https://vercel.com) - Best for Next.js and React apps. Free tier available.
-2. **Netlify** (https://netlify.com) - Easy setup for static frontends. Good CI/CD support.
-3. **GitHub Pages** (https://pages.github.com) - Free for static websites, requires build output as HTML/CSS/JS.
-4. **Render** (https://render.com) - Simple deployment for both frontend and backend.
-5. **Firebase Hosting** (https://firebase.google.com/products/hosting) - Great for scalable hosting with Google support.
-
-To deploy:
-- Push this project to GitHub.
-- Connect your GitHub repo to Vercel/Netlify.
-- Follow their deploy instructions.
-*/
