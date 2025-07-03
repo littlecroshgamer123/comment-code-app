@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import { Card, CardContent } from "../components/ui/card";
 import { ImagePlus } from "lucide-react";
 
 export default function CommentPostApp() {
@@ -12,11 +12,13 @@ export default function CommentPostApp() {
 
   const handlePost = () => {
     if (text.trim() === "") return;
+
     const newPost = {
       id: Date.now(),
       text,
       image: image ? URL.createObjectURL(image) : null,
     };
+
     setPosts([newPost, ...posts]);
     setText("");
     setImage(null);
@@ -25,6 +27,7 @@ export default function CommentPostApp() {
   return (
     <div className="max-w-2xl mx-auto mt-10 p-4 space-y-6">
       <h1 className="text-2xl font-bold text-center">Comment & Image Post App</h1>
+      
       <Card>
         <CardContent className="space-y-4 pt-4">
           <Textarea
@@ -40,7 +43,7 @@ export default function CommentPostApp() {
                 type="file"
                 accept="image/*"
                 className="hidden"
-                onChange={(e) => setImage(e.target.files[0])}
+                onChange={(e) => setImage(e.target.files?.[0])}
               />
             </label>
             {image && <span className="text-sm text-gray-600">{image.name}</span>}
@@ -68,4 +71,5 @@ export default function CommentPostApp() {
     </div>
   );
 }
+
 
